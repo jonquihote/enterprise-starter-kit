@@ -1,0 +1,30 @@
+{
+    "name": "enterprise/aeon",
+    "description": "",
+    "authors": [
+        {
+            "name": "Joni Chandra",
+            "email": "jonquihote@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Enterprise\\Aeon\\": "app/",
+            "Enterprise\\Aeon\\Database\\Factories\\": "database/factories/",
+            "Enterprise\\Aeon\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Enterprise\\Aeon\\Tests\\": "tests/"
+        }
+    }
+}

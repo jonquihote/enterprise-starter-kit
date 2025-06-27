@@ -1,0 +1,11 @@
+{
+    "name": "Aeon",
+    "alias": "aeon",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Enterprise\\Aeon\\Providers\\AeonServiceProvider"
+    ],
+    "files": []
+}

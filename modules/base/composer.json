@@ -1,0 +1,30 @@
+{
+    "name": "enterprise/base",
+    "description": "",
+    "authors": [
+        {
+            "name": "Joni Chandra",
+            "email": "jonquihote@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Enterprise\\Base\\": "app/",
+            "Enterprise\\Base\\Database\\Factories\\": "database/factories/",
+            "Enterprise\\Base\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Enterprise\\Base\\Tests\\": "tests/"
+        }
+    }
+}
