@@ -1,0 +1,28 @@
+{
+    "name": "enterprise/skeleton",
+    "description": "",
+    "authors": [
+        {
+            "name": "Joni Chandra",
+            "email": "jonquihote@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {}
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Enterprise\\Skeleton\\": "app/",
+            "Enterprise\\Skeleton\\Database\\Factories\\": "database/factories/",
+            "Enterprise\\Skeleton\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Enterprise\\Skeleton\\Tests\\": "tests/"
+        }
+    }
+}
