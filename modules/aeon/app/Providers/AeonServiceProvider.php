@@ -2,6 +2,7 @@
 
 namespace Enterprise\Aeon\Providers;
 
+use Enterprise\Aeon\Console\Commands\ResetCommand;
 use Enterprise\Aeon\Providers\Laravel\HorizonServiceProvider;
 use Enterprise\Aeon\Providers\Laravel\PulseServiceProvider;
 use Enterprise\Aeon\Providers\Laravel\TelescopeServiceProvider;
@@ -50,7 +51,9 @@ class AeonServiceProvider extends ServiceProvider
      */
     protected function registerCommands(): void
     {
-        // $this->commands([]);
+        $this->commands([
+            ResetCommand::class,
+        ]);
     }
 
     /**
