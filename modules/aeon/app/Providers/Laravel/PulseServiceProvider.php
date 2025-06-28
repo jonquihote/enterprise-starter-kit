@@ -23,13 +23,13 @@ class PulseServiceProvider extends ServiceProvider
         );
     }
 
-    protected function registerBindings(): void
-    {
-        $this->app->bind(Storage::class, DatabaseStorage::class);
-    }
-
     protected function registerProviders(): void
     {
         $this->app->register(BasePulseServiceProvider::class);
+    }
+
+    protected function registerBindings(): void
+    {
+        $this->app->bind(Storage::class, DatabaseStorage::class);
     }
 }

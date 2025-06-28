@@ -79,7 +79,8 @@
         "laravel": {
             "dont-discover": [
                 "laravel/horizon",
-                "laravel/pulse"
+                "laravel/pulse",
+                "laravel/telescope"
             ]
         },
         "merge-plugin": {
