@@ -3,6 +3,7 @@
 namespace Enterprise\Aeon\Providers;
 
 use Enterprise\Aeon\Providers\Laravel\HorizonServiceProvider;
+use Enterprise\Aeon\Providers\Laravel\PulseServiceProvider;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Nwidart\Modules\Traits\PathNamespace;
@@ -39,6 +40,7 @@ class AeonServiceProvider extends ServiceProvider
         $this->app->register(RouteServiceProvider::class);
 
         $this->app->register(HorizonServiceProvider::class);
+        $this->app->register(PulseServiceProvider::class);
     }
 
     /**

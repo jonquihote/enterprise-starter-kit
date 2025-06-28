@@ -11,7 +11,6 @@ class HorizonServiceProvider extends ServiceProvider
     {
         $this->registerConfig();
         $this->registerProviders();
-
     }
 
     protected function registerConfig(): void
