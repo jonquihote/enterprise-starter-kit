@@ -60,12 +60,12 @@
         ],
         "dev": [
             "Composer\\Config::disableProcessTimeout",
-            "bunx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"bun run dev\" \"php artisan schedule:work\" \"php artisan pail --timeout=0 -vvv\" \"php artisan queue:listen --tries=1 --timeout=0\" --names=assets,scheduler,logger,worker --kill-others"
+            "bunx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"bun run dev\" \"php artisan schedule:work\" \"php artisan pail --timeout=0 -vvv\" \"php artisan horizon\" --names=assets,scheduler,logger,worker --kill-others"
         ],
         "dev:ssr": [
             "bun run build:ssr",
             "Composer\\Config::disableProcessTimeout",
-            "bunx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan inertia:start-ssr\" \"php artisan schedule:work\" \"php artisan pail --timeout=0 -vvv\" \"php artisan queue:listen --tries=1 --timeout=0\" --names=ssr,scheduler,logger,worker --kill-others"
+            "bunx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan inertia:start-ssr\" \"php artisan schedule:work\" \"php artisan pail --timeout=0 -vvv\" \"php artisan horizon\" --names=ssr,scheduler,logger,worker --kill-others"
         ],
         "format": [
             "rector",
@@ -78,7 +78,9 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "dont-discover": [
+                "laravel/horizon"
+            ]
         },
         "merge-plugin": {
             "include": [
