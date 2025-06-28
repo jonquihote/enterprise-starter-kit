@@ -9,17 +9,17 @@ enum ModulesEnum
 {
     case BASE;
 
-    public function title(): Stringable
+    public function title(): string
     {
         return match ($this) {
-            self::BASE => self::BASE->stringable()->title(),
+            self::BASE => self::BASE->stringable()->title()->toString(),
         };
     }
 
-    public function slug(): Stringable
+    public function slug(): string
     {
         return match ($this) {
-            self::BASE => self::BASE->stringable()->slug(),
+            self::BASE => self::BASE->stringable()->slug()->toString(),
         };
     }
 

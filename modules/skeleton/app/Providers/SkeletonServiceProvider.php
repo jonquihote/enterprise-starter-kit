@@ -67,7 +67,7 @@ class SkeletonServiceProvider extends ServiceProvider
             $this->loadTranslationsFrom($langPath, $this->module->slug());
             $this->loadJsonTranslationsFrom($langPath);
         } else {
-            $this->loadTranslationsFrom(module_path($this->module->title()), 'lang'), $this->module->slug();
+            $this->loadTranslationsFrom(module_path($this->module->title(), 'lang'), $this->module->slug());
             $this->loadJsonTranslationsFrom(module_path($this->module->title(), 'lang'));
         }
     }
@@ -121,14 +121,14 @@ class SkeletonServiceProvider extends ServiceProvider
      */
     public function registerViews(): void
     {
-        $viewPath = resource_path('views/modules/' . $this->module->slug();
+        $viewPath = resource_path('views/modules/' . $this->module->slug());
         $sourcePath = module_path($this->module->title(), 'resources/views');
 
         $this->publishes([$sourcePath => $viewPath], ['views', $this->module->slug() . '-module-views']);
 
         $this->loadViewsFrom(array_merge($this->getPublishableViewPaths(), [$sourcePath]), $this->module->slug());
 
-        Blade::componentNamespace(config('modules.namespace') . '\\' . $this->module->title()) . '\\View\\Components', $this->module->slug());
+        Blade::componentNamespace(config('modules.namespace') . '\\' . $this->module->title() . '\\View\\Components', $this->module->slug());
     }
 
     /**
