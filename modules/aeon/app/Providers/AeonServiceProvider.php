@@ -38,9 +38,6 @@ class AeonServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->register(EventServiceProvider::class);
-        $this->app->register(RouteServiceProvider::class);
-
         $this->app->register(HorizonServiceProvider::class);
         $this->app->register(PulseServiceProvider::class);
         $this->app->register(TelescopeServiceProvider::class);

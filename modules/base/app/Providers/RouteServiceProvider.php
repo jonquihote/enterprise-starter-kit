@@ -2,12 +2,13 @@
 
 namespace Enterprise\Base\Providers;
 
+use Enterprise\Aeon\Enums\ModulesEnum;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
-    protected string $name = 'Base';
+    protected ModulesEnum $module = ModulesEnum::BASE;
 
     /**
      * Called before routes are registered.
@@ -35,7 +36,16 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapWebRoutes(): void
     {
-        Route::middleware('web')->group(module_path($this->name, '/routes/web.php'));
+        $title = $this->module->title();
+        $slug = $this->module->slug();
+
+        Route::group([
+            'middleware' => ['web'],
+            'prefix' => $slug,
+            'as' => "{$slug}::",
+        ], function () use ($title): void {
+            $this->loadRoutesFrom(module_path($title, '/routes/web.php'));
+        });
     }
 
     /**
@@ -45,6 +55,15 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapApiRoutes(): void
     {
-        Route::middleware('api')->prefix('api')->name('api.')->group(module_path($this->name, '/routes/api.php'));
+        $title = $this->module->title();
+        $slug = $this->module->slug();
+
+        Route::group([
+            'middleware' => ['api'],
+            'prefix' => "{$slug}/v1",
+            'as' => "{$slug}::v1.",
+        ], function () use ($title): void {
+            $this->loadRoutesFrom(module_path($title, '/routes/api-v1.php'));
+        });
     }
 }

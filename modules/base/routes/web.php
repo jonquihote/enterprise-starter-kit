@@ -1,8 +1,19 @@
 <?php
 
-use Enterprise\Base\Http\Controllers\BaseController;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::resource('bases', BaseController::class)->names('base');
+Route::group([
+    'middleware' => ['auth'],
+], function (): void {
+    Route::group([
+        'middleware' => ['verified'],
+    ], function (): void {
+        //
+    });
+});
+
+Route::group([
+    'middleware' => ['guest'],
+], function (): void {
+    //
 });
