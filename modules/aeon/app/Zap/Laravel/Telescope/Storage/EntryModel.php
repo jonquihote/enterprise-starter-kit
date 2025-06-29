@@ -9,6 +9,9 @@ use Illuminate\Database\Eloquent\Model;
 use Laravel\Telescope\Database\Factories\EntryModelFactory;
 use Laravel\Telescope\Storage\EntryQueryOptions;
 
+/**
+ * @codeCoverageIgnore
+ */
 class EntryModel extends Model
 {
     use HasFactory;

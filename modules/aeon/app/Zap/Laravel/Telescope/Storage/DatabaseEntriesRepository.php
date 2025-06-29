@@ -18,6 +18,9 @@ use Laravel\Telescope\IncomingEntry;
 use Laravel\Telescope\Storage\EntryQueryOptions;
 use Throwable;
 
+/**
+ * @codeCoverageIgnore
+ */
 class DatabaseEntriesRepository implements ClearableRepository, Contract, PrunableRepository, TerminableRepository
 {
     /**
