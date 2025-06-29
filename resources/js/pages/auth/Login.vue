@@ -1,30 +1,30 @@
 <script setup lang="ts">
-import InputError from '@/components/InputError.vue';
-import TextLink from '@/components/TextLink.vue';
-import { Button } from '@/components/ui/button';
-import { Checkbox } from '@/components/ui/checkbox';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import AuthBase from '@/layouts/AuthLayout.vue';
-import { Head, useForm } from '@inertiajs/vue3';
-import { LoaderCircle } from 'lucide-vue-next';
+import InputError from '@/components/InputError.vue'
+import TextLink from '@/components/TextLink.vue'
+import { Button } from '@/components/ui/button'
+import { Checkbox } from '@/components/ui/checkbox'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import AuthBase from '@/layouts/AuthLayout.vue'
+import { Head, useForm } from '@inertiajs/vue3'
+import { LoaderCircle } from 'lucide-vue-next'
 
 defineProps<{
-    status?: string;
-    canResetPassword: boolean;
-}>();
+    status?: string
+    canResetPassword: boolean
+}>()
 
 const form = useForm({
     email: '',
     password: '',
     remember: false,
-});
+})
 
 const submit = () => {
     form.post(route('login'), {
         onFinish: () => form.reset('password'),
-    });
-};
+    })
+}
 </script>
 
 <template>

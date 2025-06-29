@@ -1,3 +1,19 @@
+@php
+
+$component = str($page['component']);
+
+if ($component->contains('::'))
+{
+    $module = $component->before('::')->toString();
+    $view = $component->after('::')->replace('.', '/')->toString();
+
+    $component = "modules/{$module}/resources/views/pages/{$view}.vue";
+} else {
+    $component = "resources/js/pages/{$component}.vue";
+}
+
+@endphp
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}"  @class(['dark' => ($appearance ?? 'system') == 'dark'])>
     <head>
@@ -40,7 +56,11 @@
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
 
         @routes
-        @vite(['resources/js/app.ts', "resources/js/pages/{$page['component']}.vue"])
+        @vite([
+            'resources/js/app.ts',
+            'resources/css/app.css',
+            $component,
+        ])
         @inertiaHead
     </head>
     <body class="font-sans antialiased">
