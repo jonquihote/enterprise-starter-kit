@@ -11,7 +11,7 @@ import AppLogo from './AppLogo.vue'
 const mainNavItems: NavItem[] = [
     {
         title: 'Dashboard',
-        href: '/dashboard',
+        href: route('base::screens.dashboard'),
         icon: LayoutGrid,
     },
 ]
@@ -36,7 +36,7 @@ const footerNavItems: NavItem[] = [
             <SidebarMenu>
                 <SidebarMenuItem>
                     <SidebarMenuButton size="lg" as-child>
-                        <Link :href="route('dashboard')">
+                        <Link :href="route('base::screens.dashboard')">
                             <AppLogo />
                         </Link>
                     </SidebarMenuButton>
