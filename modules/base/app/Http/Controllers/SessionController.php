@@ -22,6 +22,6 @@ class SessionController extends Controller
 
         $request->session()->regenerate();
 
-        return Redirect::route('base::pages.dashboard');
+        return Redirect::route('base::screens.dashboard');
     }
 }

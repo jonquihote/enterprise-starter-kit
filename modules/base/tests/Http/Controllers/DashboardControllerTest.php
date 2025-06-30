@@ -8,7 +8,7 @@ it('can render dashboard page', function () {
     $user = User::factory()->create();
 
     $response = actingAs($user)
-        ->get(route('base::pages.dashboard'));
+        ->get(route('base::screens.dashboard'));
 
     $response->assertOk();
 });

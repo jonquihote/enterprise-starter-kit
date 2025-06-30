@@ -13,7 +13,7 @@ Route::group([
         //
     });
 
-    Route::get('dashboard', DashboardController::class)->name('pages.dashboard');
+    Route::get('dashboard', DashboardController::class)->name('screens.dashboard');
 });
 
 Route::group([

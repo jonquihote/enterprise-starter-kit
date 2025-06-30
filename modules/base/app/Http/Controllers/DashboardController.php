@@ -10,6 +10,6 @@ class DashboardController extends Controller
 {
     public function __invoke(): Response
     {
-        return Inertia::render('base::pages.dashboard');
+        return Inertia::render('base::screens.dashboard');
     }
 }
