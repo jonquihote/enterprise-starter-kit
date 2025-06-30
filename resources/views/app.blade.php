@@ -9,7 +9,7 @@ if ($component->contains('::'))
 
     $component = "modules/{$module}/resources/views/pages/{$view}.vue";
 } else {
-    $component = "resources/js/pages/{$component}.vue";
+    $component = "resources/views/pages/{$component}.vue";
 }
 
 @endphp
@@ -57,8 +57,8 @@ if ($component->contains('::'))
 
         @routes
         @vite([
-            'resources/js/app.ts',
-            'resources/css/app.css',
+            'resources/scripts/app.ts',
+            'resources/styles/app.css',
             $component,
         ])
         @inertiaHead

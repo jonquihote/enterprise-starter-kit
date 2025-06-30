@@ -1,14 +1,14 @@
-import vue from '@vitejs/plugin-vue';
-import laravel from 'laravel-vite-plugin';
-import path from 'path';
-import tailwindcss from '@tailwindcss/vite';
-import { defineConfig } from 'vite';
+import tailwindcss from '@tailwindcss/vite'
+import vue from '@vitejs/plugin-vue'
+import laravel from 'laravel-vite-plugin'
+import path from 'path'
+import { defineConfig } from 'vite'
 
 export default defineConfig({
     plugins: [
         laravel({
-            input: ['resources/js/app.ts'],
-            ssr: 'resources/js/ssr.ts',
+            input: ['resources/scripts/app.ts'],
+            ssr: 'resources/scripts/ssr.ts',
             refresh: true,
         }),
         tailwindcss(),
@@ -23,7 +23,7 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            '@': path.resolve(__dirname, './resources/js'),
+            '@': path.resolve(__dirname, './resources'),
         },
     },
-});
+})
