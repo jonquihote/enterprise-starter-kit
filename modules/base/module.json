@@ -4,8 +4,6 @@
     "description": "",
     "keywords": [],
     "priority": 0,
-    "providers": [
-        "Enterprise\\Base\\Providers\\BaseServiceProvider"
-    ],
+    "providers": ["Enterprise\\Base\\Providers\\BaseServiceProvider"],
     "files": []
 }
