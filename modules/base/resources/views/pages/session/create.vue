@@ -40,14 +40,14 @@ defineOptions({
         <Card>
             <CardHeader>
                 <CardTitle>Login to your account</CardTitle>
-                <CardDescription>Enter your ID below to login to your account</CardDescription>
+                <CardDescription>Enter your credentials to login to your account</CardDescription>
             </CardHeader>
             <CardContent>
                 <form @submit.prevent="onFormSubmit">
                     <div class="flex flex-col gap-6">
                         <div class="grid gap-3">
-                            <Label for="input-id">ID</Label>
-                            <Input id="input-id" placeholder="Username / E-mail Address / Phone" v-model="form.login" required autofocus />
+                            <Label for="input-account-id">Account ID</Label>
+                            <Input id="input-account-id" placeholder="Account ID" v-model="form.login" required autofocus />
                             <InputError :message="form.errors.login" />
                         </div>
                         <div class="grid gap-3">
